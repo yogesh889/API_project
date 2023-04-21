@@ -1,0 +1,12 @@
+div.card{
+    margin: 50px 43px;
+}
+.card-body h5{
+    text-align: center;
+}
+#button{
+    display: block;
+}
+h5.card-title{
+    height: 125px;
+}

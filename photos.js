@@ -20,3 +20,12 @@ async function myFunction() {
         console.error(error);
     }
 }
+
+
+try {
+    const response = await fetch(url, options).then(response => response.json());
+    const result = await response.text();
+    console.log(result);
+} catch (error) {
+    console.error(error);
+}

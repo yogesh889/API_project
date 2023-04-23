@@ -1,4 +1,5 @@
 const url = 'https://stock-photos-and-videos.p.rapidapi.com/api/suggestions';
+console.log(url)
 const options = {
     method: 'POST',
     headers: {
@@ -8,24 +9,30 @@ const options = {
     },
     body: new URLSearchParams({ term: 'technology' })
 };
-async function myFunction() {
-    let x = document.getElementById("search").value;
-    document.getElementById("demo").innerHTML = x;
-    console.log(x)
+async function stockPhotos() {
     try {
         const response = await fetch(url, options);
-        const result = await response.text();
+        const result = await response.json();
         console.log(result);
     } catch (error) {
         console.error(error);
     }
+
 }
 
+stockPhotos()
+    .then(data => {
 
-try {
-    const response = await fetch(url, options).then(response => response.json());
-    const result = await response.text();
-    console.log(result);
-} catch (error) {
-    console.error(error);
-}
+        let ihtml = ""
+        for (const item of data.id) {
+            ihtml += `
+              <div class="card" style="width: 18rem;">
+              <img src="${item.id}" class="card-img-top" alt="...">
+              </div>
+            `
+            console.log(data)
+        };
+
+        cardContainer.innerHTML = ihtml 
+
+    });

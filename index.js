@@ -1,3 +1,11 @@
+const options = {
+    method: 'GET',
+    headers: {
+        'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
+        'X-RapidAPI-Host': 'bloomberg-market-and-financial-news.p.rapidapi.com'
+    }
+};
+
 let url = "https://kontests.net/api/v1/all"
 let response = fetch(url)
 response.then((v) => {
@@ -23,15 +31,5 @@ response.then((v) => {
     cardContainer.innerHTML = ihtml
 })
 
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
-		'X-RapidAPI-Host': 'bloomberg-market-and-financial-news.p.rapidapi.com'
-	}
-};
 
-fetch('https://bloomberg-market-and-financial-news.p.rapidapi.com/market/auto-complete?query=%3CREQUIRED%3E', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
+

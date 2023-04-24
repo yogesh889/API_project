@@ -10,6 +10,7 @@ var url = 'https://bloomberg-market-and-financial-news.p.rapidapi.com/market/aut
     fetch(url, options)
       .then(response => response.json())
       .then(data => {
+        console.log(data)
         let ihtml = ""
         for (const item of data.news) {
           if (item.thumbnailImage) {

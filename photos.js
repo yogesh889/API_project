@@ -24,7 +24,7 @@ stockPhotos()
     .then(data => {
 
         let ihtml = ""
-        for (const item of data.id) {
+        for (const item of data) {
             ihtml += `
               <div class="card" style="width: 18rem;">
               <img src="${item.id}" class="card-img-top" alt="...">

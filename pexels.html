@@ -16,7 +16,7 @@
 
 </head>
 
-<body>
+<body onload="myFunction()">
 
     <nav class="navbar bg-light">
         <div class="container-fluid">
@@ -25,8 +25,9 @@
             <a href="pexels.html" class="navbar-brand">pexels</a>
             <a href="photos.html" class="navbar-brand">stocks photos and videos</a>
             <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
+                <input id="mySearch" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="button" onclick="myFunction()">Search</button>
+                <p id="demo"></p>
             </form>
         </div>
     </nav>
